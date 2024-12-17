@@ -1,0 +1,61 @@
+// Base class Animal
+class Animal {
+    // Method of the Animal class
+    public void sound() {
+        System.out.println("Animal makes a sound");
+    }
+    
+    // Method to display general information about animals
+    public void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Derived class Dog, inheriting from Animal
+class Dog extends Animal {
+    // Method specific to Dog class
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+    
+    // Dog specific behavior
+    public void sleep() {
+        System.out.println("Dog is sleeping");
+    }
+}
+
+// Derived class Cat, inheriting from Animal
+class Cat extends Animal {
+    // Method specific to Cat class
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+    
+    // Cat specific behavior
+    public void purr() {
+        System.out.println("Cat is purring");
+    }
+}
+
+// Main class to test the inheritance
+public class HierarchicalInheritanceExample {
+    public static void main(String[] args) {
+        // Creating objects of Dog and Cat
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        
+        // Using Dog methods
+        System.out.println("Dog actions:");
+        dog.sound(); // Calls Dog's version of sound()
+        dog.eat();   // Inherited from Animal
+        dog.sleep(); // Calls Dog's specific method
+        
+        System.out.println();
+        
+        // Using Cat methods
+        System.out.println("Cat actions:");
+        cat.sound(); // Calls Cat's version of sound()
+        cat.eat();   // Inherited from Animal
+        cat.purr();  // Calls Cat's specific method
+    }
+}

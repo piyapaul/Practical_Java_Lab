@@ -1,0 +1,37 @@
+// Custom exception class
+class AgeNotValidException extends Exception {
+    public AgeNotValidException(String message) {
+        super(message);
+    }
+}
+
+public class ThrowsAndThrowExample {
+
+    // Method that uses 'throws' to declare an exception
+    public static void checkAge(int age) throws AgeNotValidException {
+        if (age < 18) {
+            // Using 'throw' to explicitly throw an exception
+            throw new AgeNotValidException("Age must be 18 or older to proceed.");
+        } else {
+            System.out.println("You are eligible to proceed.");
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            // Calling method that throws exception
+            checkAge(16);  // This will throw an exception
+        } catch (AgeNotValidException e) {
+            // Handling the exception thrown
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+
+        try {
+            // Another method call with valid age
+            checkAge(20);  // This will not throw an exception
+        } catch (AgeNotValidException e) {
+            // Handling the exception, though it won't occur here
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}

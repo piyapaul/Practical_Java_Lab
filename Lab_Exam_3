@@ -1,0 +1,37 @@
+class Circle {
+    // Private instance variable
+    private double radius;
+
+    // No-arg constructor: sets default radius to 1.0
+    public Circle() {
+        this.radius = 1.0;
+    }
+
+    // Parameterized constructor: sets radius to the specified value
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Method to calculate and return the area of the circle
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Getter method for the radius
+    public double getRadius() {
+        return radius;
+    }
+
+    // Main method to test the Circle class
+    public static void main(String[] args) {
+        // Create three Circle objects with radii 2.0, 12, and 24
+        Circle circle1 = new Circle(2.0);
+        Circle circle2 = new Circle(12);
+        Circle circle3 = new Circle(24);
+
+        // Display the radius and area of each circle
+        System.out.println("Circle 1: Radius = " + circle1.getRadius() + ", Area = " + circle1.getArea());
+        System.out.println("Circle 2: Radius = " + circle2.getRadius() + ", Area = " + circle2.getArea());
+        System.out.println("Circle 3: Radius = " + circle3.getRadius() + ", Area = " + circle3.getArea());
+    }
+}

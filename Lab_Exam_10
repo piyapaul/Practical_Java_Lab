@@ -1,0 +1,33 @@
+class StaticKeywordExample {
+
+    // Static variable
+    static int counter = 0;
+
+    // Constructor
+    StaticKeywordExample() {
+        counter++;
+        System.out.println("Object created. Current count: " + counter);
+    }
+
+    // Static method
+    static void displayCount() {
+        System.out.println("Current count is: " + counter);
+    }
+
+    // Static block
+    static {
+        System.out.println("Static block is executed.");
+    }
+
+    public static void main(String[] args) {
+        // Static method can be called without creating an object
+        StaticKeywordExample.displayCount();
+
+        // Creating objects
+        StaticKeywordExample obj1 = new StaticKeywordExample();
+        StaticKeywordExample obj2 = new StaticKeywordExample();
+
+        // Static method can also be called using the class name
+        StaticKeywordExample.displayCount();
+    }
+}

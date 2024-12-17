@@ -1,0 +1,24 @@
+public class NestedTryCatchExample {
+    public static void main(String[] args) {
+        try {
+            // Outer try block
+            System.out.println("Outer try block");
+            
+            try {
+                // Inner try block that throws ArithmeticException
+                System.out.println("Inside inner try block");
+                int result = 10 / 0; // ArithmeticException
+            } catch (ArithmeticException e) {
+                System.out.println("Caught ArithmeticException: " + e);
+            }
+            
+            // Another part of the outer try block that throws NullPointerException
+            String str = null;
+            System.out.println(str.length());  // NullPointerException
+        } catch (NullPointerException e) {
+            System.out.println("Caught NullPointerException: " + e);
+        } catch (Exception e) {
+            System.out.println("Caught general Exception: " + e);
+        }
+    }
+}

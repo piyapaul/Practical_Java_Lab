@@ -1,0 +1,9 @@
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class MessageApplet extends Applet {
+    // Method to display message on the applet window
+    public void paint(Graphics g) {
+        g.drawString("Hello, Welcome to Java Applet!", 50, 50);
+    }
+}

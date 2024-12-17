@@ -1,0 +1,24 @@
+public class MatrixDiagonalSum {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int diagonalSum = 0;
+
+        // Loop to calculate sum of diagonals
+        for (int i = 0; i < matrix.length; i++) {
+            diagonalSum += matrix[i][i]; // Primary diagonal
+            diagonalSum += matrix[i][matrix.length - 1 - i]; // Secondary diagonal
+        }
+
+        // Adjust for double-counted center element in odd-size matrices
+        if (matrix.length % 2 != 0) {
+            diagonalSum -= matrix[matrix.length / 2][matrix.length / 2];
+        }
+
+        System.out.println("Sum of Diagonals: " + diagonalSum);
+    }
+}

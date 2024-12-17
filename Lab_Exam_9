@@ -1,0 +1,29 @@
+// Interface 1
+interface Animal {
+    void eat();
+}
+
+// Interface 2
+interface Bird {
+    void fly();
+}
+
+// Concrete class that implements both Animal and Bird interfaces
+class Sparrow implements Animal, Bird {
+    public void eat() {
+        System.out.println("Sparrow is eating.");
+    }
+
+    public void fly() {
+        System.out.println("Sparrow is flying.");
+    }
+}
+
+// Main class to test multiple inheritance
+public class MultipleInheritanceExample {
+    public static void main(String[] args) {
+        Sparrow sparrow = new Sparrow();
+        sparrow.eat(); // From Animal interface
+        sparrow.fly(); // From Bird interface
+    }
+}

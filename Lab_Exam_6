@@ -1,0 +1,28 @@
+import java.io.*;
+
+public class ChainedExceptionExample {
+
+    // Method to demonstrate chained exception
+    public static void performOperations() throws IOException {
+        try {
+            // Simulating an exception
+            throw new FileNotFoundException("File not found during operation.");
+        } catch (FileNotFoundException e) {
+            // Creating a new exception and chaining the original exception
+            IOException ioException = new IOException("IOException occurred while performing operations.");
+            ioException.initCause(e);  // Chaining the FileNotFoundException to the IOException
+            throw ioException;  // Throw the chained exception
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            // Calling the method that throws a chained exception
+            performOperations();
+        } catch (IOException e) {
+            // Catching and handling the exception
+            System.out.println("Caught exception: " + e);
+            System.out.println("Cause of exception: " + e.getCause());  // Display the cause of the exception
+        }
+    }
+}

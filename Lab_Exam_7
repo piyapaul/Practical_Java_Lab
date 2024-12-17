@@ -1,0 +1,42 @@
+public class CallByValueAndReference {
+
+    // Call by Value (for primitive types)
+    public static void callByValue(int num) {
+        System.out.println("Inside callByValue method:");
+        System.out.println("Before changing, num = " + num);
+        num = 10;  // Changing the value of num
+        System.out.println("After changing, num = " + num);
+    }
+
+    // Call by Reference (for objects)
+    public static void callByReference(MyObject obj) {
+        System.out.println("\nInside callByReference method:");
+        System.out.println("Before changing, obj.value = " + obj.value);
+        obj.value = 100;  // Modifying the object property
+        System.out.println("After changing, obj.value = " + obj.value);
+    }
+
+    public static void main(String[] args) {
+        // Call by Value example
+        int a = 5;
+        System.out.println("Main method (before callByValue): a = " + a);
+        callByValue(a);  // Passing primitive type
+        System.out.println("Main method (after callByValue): a = " + a);  // 'a' remains unchanged
+
+        // Call by Reference example
+        MyObject obj = new MyObject(50);
+        System.out.println("\nMain method (before callByReference): obj.value = " + obj.value);
+        callByReference(obj);  // Passing object reference
+        System.out.println("Main method (after callByReference): obj.value = " + obj.value);  // obj is modified
+    }
+}
+
+// Custom class to demonstrate Call by Reference
+class MyObject {
+    int value;
+
+    // Constructor
+    MyObject(int value) {
+        this.value = value;
+    }
+}

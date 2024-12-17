@@ -1,0 +1,27 @@
+// Base class
+class Animal {
+    // Method in the base class
+    public void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Derived class
+class Dog extends Animal {
+    // Overriding the sound method in the derived class
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Main class to test method overriding
+public class MethodOverridingExample {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        animal.sound();  // Calls the Animal's sound method
+        
+        Dog dog = new Dog();
+        dog.sound();     // Calls the Dog's overridden sound method
+    }
+}
